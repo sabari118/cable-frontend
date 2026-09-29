@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+.page {
+  min-height: 100vh;
+  background: #0B1620;
+  color: #EDF1F4;
+  font-family: 'Inter', sans-serif;
+  padding: 32px 20px 60px;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.backBtn {
+  background: transparent;
+  border: 1px solid #1C3446;
+  color: #7C93A3;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.backBtn:hover {
+  border-color: #F2A93B;
+  color: #F2A93B;
+}
+
+.headerText h1 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  margin: 0 0 2px;
+}
+
+.headerText p {
+  margin: 0;
+  font-size: 13px;
+  color: #7C93A3;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 90px;
+}
+
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.channelCard {
+  background: #132433;
+  border: 1px solid #1C3446;
+  border-radius: 12px;
+  padding: 18px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.15s ease;
+  text-align: left;
+}
+
+.channelCard.selected {
+  border-color: #F2A93B;
+  background: #16283A;
+}
+
+.channelTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.channelIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #0F1E2B;
+  border: 1px solid #1C3446;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.channelIconImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.channelNameRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.channelName {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.hdBadge {
+  font-size: 10px;
+  font-weight: 700;
+  color: #0B1620;
+  background: #F2A93B;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 1px solid #1C3446;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #0B1620;
+}
+
+.channelCard.selected .checkbox {
+  background: #F2A93B;
+  border-color: #F2A93B;
+}
+
+.channelPrice {
+  font-size: 13px;
+  color: #7C93A3;
+}
+
+.channelPrice b {
+  color: #F2A93B;
+  font-weight: 700;
+}
+
+.centerMsg {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0B1620;
+  color: #7C93A3;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+}
+
+.emptyMsg {
+  color: #7C93A3;
+  font-size: 14px;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #0F1E2B;
+  border-top: 1px solid #1C3446;
+  padding: 14px 20px calc(14px + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.footerSummary {
+  font-size: 13px;
+  color: #7C93A3;
+}
+
+.footerSummary b {
+  color: #EDF1F4;
+}
+
+.proceedBtn {
+  background: #F2A93B;
+  color: #0B1620;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: 'Manrope', sans-serif;
+}
+
+.proceedBtn:disabled {
+  background: #1C3446;
+  color: #7C93A3;
+  cursor: not-allowed;
+}
