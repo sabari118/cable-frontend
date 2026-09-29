@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+.page {
+  min-height: 100vh;
+  background: #0B1620;
+  color: #EDF1F4;
+  font-family: 'Inter', sans-serif;
+  padding: 32px 20px 60px;
+}
+
+.wrap {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.backBtn {
+  background: transparent;
+  border: 1px solid #1C3446;
+  color: #7C93A3;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.backBtn:hover {
+  border-color: #F2A93B;
+  color: #F2A93B;
+}
+
+.headerText h1 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  margin: 0 0 2px;
+}
+
+.headerText p {
+  margin: 0;
+  font-size: 13px;
+  color: #7C93A3;
+}
+
+.orderCard {
+  background: #132433;
+  border: 1px solid #1C3446;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 12px;
+}
+
+.orderTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.orderId {
+  font-size: 12px;
+  color: #7C93A3;
+}
+
+.statusBadge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  letter-spacing: 0.3px;
+}
+
+.statusSUCCESS {
+  background: rgba(76, 175, 109, 0.15);
+  color: #4CAF6D;
+}
+
+.statusPENDING {
+  background: rgba(242, 169, 59, 0.15);
+  color: #F2A93B;
+}
+
+.statusFAILED {
+  background: rgba(240, 149, 149, 0.15);
+  color: #F09595;
+}
+
+.channelList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.channelPill {
+  font-size: 12px;
+  background: #0F1E2B;
+  border: 1px solid #1C3446;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: #EDF1F4;
+}
+
+.orderBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid #1C3446;
+}
+
+.orderDate {
+  font-size: 12px;
+  color: #7C93A3;
+}
+
+.orderAmount {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  color: #F2A93B;
+  font-size: 15px;
+}
+
+.centerMsg {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  background: #0B1620;
+  color: #7C93A3;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  text-align: center;
+  padding: 20px;
+}
+
+.centerMsg a {
+  color: #F2A93B;
+  text-decoration: none;
+  font-weight: 600;
+}

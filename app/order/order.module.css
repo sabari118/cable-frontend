@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+.page {
+  min-height: 100vh;
+  background: #0B1620;
+  color: #EDF1F4;
+  font-family: 'Inter', sans-serif;
+  padding: 32px 20px 60px;
+}
+
+.wrap {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.backBtn {
+  background: transparent;
+  border: 1px solid #1C3446;
+  color: #7C93A3;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.backBtn:hover {
+  border-color: #F2A93B;
+  color: #F2A93B;
+}
+
+.headerText h1 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  margin: 0 0 2px;
+}
+
+.headerText p {
+  margin: 0;
+  font-size: 13px;
+  color: #7C93A3;
+}
+
+.card {
+  background: #132433;
+  border: 1px solid #1C3446;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.cardLabel {
+  font-size: 12px;
+  color: #7C93A3;
+  margin: 0 0 14px;
+}
+
+.lineItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid #1C3446;
+  font-size: 14px;
+}
+
+.lineItem:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.lineItemName {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+}
+
+.lineItemPrice {
+  color: #F2A93B;
+  font-weight: 700;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  margin-top: 6px;
+  border-top: 1px solid #1C3446;
+}
+
+.totalLabel {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.totalAmount {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  color: #F2A93B;
+}
+
+.payBtn {
+  width: 100%;
+  background: #F2A93B;
+  color: #0B1620;
+  border: none;
+  padding: 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  font-family: 'Manrope', sans-serif;
+  margin-top: 8px;
+}
+
+.payBtn:disabled {
+  background: #1C3446;
+  color: #7C93A3;
+  cursor: not-allowed;
+}
+
+.centerMsg {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  background: #0B1620;
+  color: #7C93A3;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  text-align: center;
+  padding: 20px;
+}
+
+.centerMsg a {
+  color: #F2A93B;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.errorText {
+  color: #F09595;
+  font-size: 13px;
+  margin-top: 12px;
+  text-align: center;
+}
