@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import styles from "./view-orders.module.css"
+import { API_URL } from "@/lib/api"
 
 interface OrderChannel {
   channel_id: string
@@ -36,7 +37,7 @@ export default function ViewOrdersPage() {
       }
 
       try {
-        const res = await fetch("http://localhost:3000/order/AllOders", {
+        const res = await fetch(`${API_URL}/order/AllOders`, {
           method: "GET",
           headers: {
             "Authorization": `Bearer ${token}`,

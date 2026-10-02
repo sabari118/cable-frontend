@@ -4,6 +4,7 @@ import { useState } from "react"
 
 import style from "./login.module.css"
 import { useRouter } from "next/navigation"
+import { API_URL } from "@/lib/api"
 
 export default function LoginUser(){
     const router = useRouter()
@@ -11,8 +12,8 @@ export default function LoginUser(){
     const[password,setpassword]=useState("")
     async function handleSubmit(e:React.SubmitEvent){
         e.preventDefault()
-
-        const responce =await fetch("http://localhost:3000/auth/user/login",{method:"POST",
+         
+        const responce =await fetch(`${API_URL}/login`,{method:"POST",
             headers:{"Content-Type":"application/json",},
             body:JSON.stringify({email,password}),
         })

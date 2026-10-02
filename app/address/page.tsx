@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import style from "./address.module.css"
+import { API_URL } from "@/lib/api";
 export default function AddressPage(){
     const router=useRouter()
     const[doorNo,setdoorNo]=useState("")
@@ -32,7 +33,7 @@ export default function AddressPage(){
     setLoading(true)
 
     try{
-        const addressRes=await fetch("http://localhost:3000/address",{
+        const addressRes=await fetch(`${API_URL}/address`,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json",
@@ -61,7 +62,7 @@ export default function AddressPage(){
         const formData=new FormData()
         formData.append("file", aadhaarFile)
 
-        const fileRes=await fetch(`http://localhost:3000/attachement/${address_id}`,{
+        const fileRes=await fetch(`${API_URL}/attachement/${address_id}`,{
             method:"POST",
             headers:{
                 "Authorization":`Bearer ${token}`,
