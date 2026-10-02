@@ -57,6 +57,7 @@ interface Channel {
   name: string
   amount: string
   logo_path?: string | null
+  
 }
 
 const API_BASE = `${API_URL}`
