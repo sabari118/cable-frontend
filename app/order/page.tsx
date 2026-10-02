@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import Script from "next/script"
 import styles from "./order.module.css"
+import { API_URL } from "@/lib/api"
 
 interface Channel {
   channel_id: string
@@ -60,7 +61,7 @@ export default function OrderPage() {
 
     try {
       // Step 1: create the order on our backend (this also creates it on Razorpay)
-      const res = await fetch("http://localhost:3000/order", {
+      const res = await fetch(`${API_URL}/order`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -95,7 +96,7 @@ export default function OrderPage() {
         // this round trip to /order/verify.
         handler: async function (response: any) {
           try {
-            const verifyRes = await fetch("http://localhost:3000/order/verify", {
+            const verifyRes = await fetch(`${API_URL}/verify`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import style from "./operater.module.css"
+import { API_URL } from "@/lib/api"
 export default function operaterlogin(){
     const router = useRouter()
     const[Email,setEmail]=useState("")
@@ -11,7 +12,7 @@ export default function operaterlogin(){
     async function handleSubmit(e:React.SubmitEvent){
     e.preventDefault()
 
-    const responce=await fetch("http://localhost:3000/auth/operater/operaterLogin",{method:"POST",
+    const responce=await fetch(`${API_URL}/auth/operaterLogin`,{method:"POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify({Email,password})
     })

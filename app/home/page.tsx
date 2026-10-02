@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 import styles from "./homepage.module.css"
 import Link from "next/link"
 import ChatWidget from "../components/chatWidget"
+import { API_URL } from "@/lib/api"
 
 interface UserData {
   user_id: string
@@ -36,7 +37,7 @@ export default function Homepage() {
       }
 
       try {
-        const res = await fetch("http://localhost:3000/auth/homepage", {
+        const res = await fetch(`${API_URL}/auth/homepage`, {
           method: "GET",
           headers: {
             "Authorization": `Bearer ${token}`,

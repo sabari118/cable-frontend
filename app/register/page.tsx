@@ -5,6 +5,7 @@ import { useState } from "react"
 import styles from "./register.module.css"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import { API_URL } from "@/lib/api"
 
 export default function RegisterPage(){
     
@@ -18,8 +19,8 @@ export default function RegisterPage(){
         e.preventDefault()
 
         const endpoint=role === "operater" 
-        ? "http://localhost:3000/auth/register/operater" 
-        : "http://localhost:3000/auth/register/user"
+        ?`${API_URL}/auth/register/operater` 
+        : `${API_URL}/auth/register/user`
 
        const responce = await fetch(endpoint,{method:"POST",
         headers:{"Content-Type":"application/json",},
@@ -34,7 +35,7 @@ export default function RegisterPage(){
 
        localStorage.setItem("accessToken", data.Access_TOken)
         localStorage.setItem("role", role)
-       if (role === "operatoer") {
+       if (role === "operater") {
            router.push("/operater-homepage")
          } else {
           router.push("/address")    
@@ -99,9 +100,9 @@ export default function RegisterPage(){
           Register
         </button>
 
-        <Link href="/login" className={styles.signInButton} type="button">
-          Have account? LogIn
-        </Link>
+        <Link href={role === "operater" ? "/operaterlogin" : "/login"} className={styles.signInButton}>
+  Have account? LogIn
+</Link>
 
       </form>
 

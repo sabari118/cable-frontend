@@ -60,7 +60,7 @@ interface Channel {
 
 const API_BASE = "http://localhost:3000"
 
-// Cleans up raw names like "SPORTS_HD" into "Sports HD" for display
+
 function formatChannelName(name: string) {
   return name
     .split("_")
@@ -86,7 +86,7 @@ export default function ChannelPage() {
       }
 
       try {
-        const res = await fetch("http://localhost:3000/channel", {
+        const res = await fetch(`${API_BASE}/channel`, {
           method: "GET",
           headers: {
             "Authorization": `Bearer ${token}`,

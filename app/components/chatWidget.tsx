@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react"
 import styles from "./ChatWidget.module.css"
+import { API_URL } from "@/lib/api"
 
 interface Message {
   role: "user" | "assistant"
@@ -42,7 +43,7 @@ export default function ChatWidget({ liftedUp = false }: ChatWidgetProps) {
     setSending(true)
 
     try {
-      const res = await fetch("http://localhost:3000/ai/chat", {
+      const res = await fetch(`${API_URL}/ai/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
