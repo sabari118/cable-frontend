@@ -50,6 +50,7 @@ import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import styles from "./channel.module.css"
+import { API_URL } from "@/lib/api"
 
 interface Channel {
   channel_id: string
@@ -58,7 +59,7 @@ interface Channel {
   logo_path?: string | null
 }
 
-const API_BASE = "http://localhost:3000"
+const API_BASE = `${API_URL}`
 
 
 function formatChannelName(name: string) {
