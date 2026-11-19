@@ -1,0 +1,115 @@
+.container {
+  min-height: 100vh;
+  background: #0B1620;
+  color: #EDF1F4;
+  padding: 32px 20px 60px;
+  font-family: 'Inter', sans-serif;
+}
+.backButton {
+  background: transparent;
+  border: 1px solid #1C3446;
+  color: #7C93A3;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.backButton:hover {
+  border-color: #F2A93B;
+  color: #F2A93B;
+}
+
+.biggBox {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #132433;
+  border: 1px solid #1C3446;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.topRow {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap:16px;
+  margin-bottom: 20px;
+}
+
+.heading {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: #7C93A3;
+  padding: 10px 12px;
+  border-bottom: 1px solid #1C3446;
+}
+
+.table td {
+  padding: 14px 12px;
+  font-size: 14px;
+  border-bottom: 1px solid #1C3446;
+  vertical-align: top;
+  word-break: break-word;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background: #232523;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+
+.badgePending {
+  background: rgba(242, 169, 59, 0.15);
+  color: #F2A93B;
+}
+
+.badgeOther {
+  background: rgba(124, 147, 163, 0.15);
+  color: #7C93A3;
+}
+
+.muted {
+  color: #7C93A3;
+}
+
+.empty {
+  text-align: center;
+  color: #7C93A3;
+  font-size: 14px;
+  padding: 40px 0 10px;
+}
+
+.centerMsg {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0B1620;
+  color: #7C93A3;
+  font-size: 14px;
+} 

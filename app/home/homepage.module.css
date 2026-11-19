@@ -65,6 +65,36 @@
   color: #F2A93B;
 }
 
+/* .Addorder{
+  margin-left:60%;
+  color:yellow;
+} */
+
+.headerActions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iconBtn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #1C3446;
+  border-radius: 8px;
+  background: transparent;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.iconBtn:hover {
+  border-color: #F2A93B;
+}
+
 .infoGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
