@@ -59,6 +59,26 @@
    background-color: rgb(157, 129, 240);
 }
 
+.error{
+    display:flex;
+  align-items:center;
+  gap:8px;
+  margin:0;
+  padding: 10px 12px;
+  background-color:#fee2e2;
+  border: 1px solid #fca5a5;
+  border-left: 4px solid #dc2626;
+  border-radius: 8px;
+  color: #991b1b;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.errorText{
+  color:#2563eb;
+  font-weight:600;
+}
+
 
 /* 
 

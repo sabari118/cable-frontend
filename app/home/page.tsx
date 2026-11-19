@@ -10,7 +10,7 @@ import { API_URL } from "@/lib/api"
 interface UserData {
   user_id: string
   name: string
-  email: string
+  Email: string
   role?: { name: string }
   address?: {
     door_no?: string
@@ -89,12 +89,22 @@ export default function Homepage() {
           <div className={styles.avatar}>{initial}</div>
           <div className={styles.headerText}>
             <h1>{user?.name}</h1>
-            <p>{user?.email}</p>
+            <p>{user?.Email}</p>
           </div>
-          <button className={styles.logoutBtn} onClick={handleLogout}>
-            Log out
-          </button>
-        </div>
+           <div className={styles.headerActions}>
+    <Link
+      href="/create-complains"
+      className={styles.iconBtn}
+      aria-label="Complaints"
+      title="Complaints"
+    >
+      📓
+    </Link>
+    <button className={styles.logoutBtn} onClick={handleLogout}>
+      Log out
+    </button>
+  </div>
+</div>
 
         <div className={styles.infoGrid}>
           <div className={styles.card}>
@@ -105,7 +115,7 @@ export default function Homepage() {
             </div>
             <div className={styles.cardRow}>
               <span>Email</span>
-              <span>{user?.email}</span>
+              <span>{user?.Email}</span>
             </div>
             <div className={styles.cardRow}>
               <span>Role</span>
@@ -155,6 +165,12 @@ export default function Homepage() {
             <span className={styles.actionTitle}>View orders</span>
             <span className={styles.actionDesc}>Track your current subscriptions</span>
           </Link>
+
+          <Link href="/view-complains" className={styles.actionTile}>
+             <span className={styles.actionIcon}>o</span>
+             <span className={styles.actionTitle}>View Complaints</span>
+             <span className={styles.actionDesc}>Track your current complaints</span>
+          </Link> 
         </div>
 
       </div>
