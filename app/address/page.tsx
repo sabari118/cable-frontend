@@ -15,84 +15,94 @@ export default function AddressPage(){
     const[loading,setLoading]=useState(false)
     const[err,setError]=useState("")
 
-    async function handleSubmit(e:React.SyntheticEvent<HTMLFormElement>){
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    if(loading) return
+    if (loading) return
     setError("")
 
-    if(!aadhaarFile){
-        setError("Please select your aadhar card file")
-        return 
+    if (!aadhaarFile) {
+      setError("Please select your aadhar card file")
+      return
     }
-    const token=localStorage.getItem("accessToken")
-    const role=localStorage.getItem("role")
 
-    if(!token || !role){
-        setError("you must be logged in")
-        return
+    const token = localStorage.getItem("accessToken")
+    const role = localStorage.getItem("role")
+
+    if (!token || !role) {
+      setError("you must be logged in")
+      return
     }
+
     setLoading(true)
 
-    try{
-        let address_id = addressId
-        if(!address_id){
-        const addressRes=await fetch(`${API_URL}/address`,{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json",
-                "Authorization":`Bearer ${token}`,
-                "role":role || "",
-            },
-            body:JSON.stringify({
-                door_no:doorNo,
-                area,
-                state,
-                street,
+    try {
+      let address_id = addressId
 
-            }),
+      // step 1: create the address only if it was not created already
+      if (!address_id) {
+        const addressRes = await fetch(`${API_URL}/address`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`,
+            "role": role,
+          },
+          body: JSON.stringify({
+            door_no: doorNo,
+            area,
+            state,
+            street,
+          }),
         })
 
-        const addressData= await addressRes.json()
+        const addressData = await addressRes.json()
 
-        if(!addressRes.ok){
-            setError(addressData.message || "Failer to create address")
-            setLoading(false)
-            return 
+        if (!addressRes.ok) {
+          const message = Array.isArray(addressData.message)
+            ? addressData.message.join(", ")
+            : addressData.message
+          setError(String(message || "Failed to create address"))
+          return
         }
 
-         address_id=addressData.address_id
-          setAddressId(address_id)
+        address_id = addressData.address_id
+        setAddressId(address_id)
+      }
 
+      // step 2: upload the aadhaar file
+      const formData = new FormData()
+      formData.append("file", aadhaarFile)
 
-    }
-        const formData=new FormData()
-        formData.append("file", aadhaarFile)
+      const fileRes = await fetch(`${API_URL}/attachement/${address_id}`, {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${token}`,
+          "role": role,
+        },
+        body: formData,
+      })
 
-        const fileRes=await fetch(`${API_URL}/attachement/${address_id}`,{
-            method:"POST",
-            headers:{
-                "Authorization":`Bearer ${token}`,
-                "role":role,
-            },
-            body:formData
-        })
-        const fileData=await fileRes.json()
+      const fileData = await fileRes.json()
 
-        if (!fileRes.ok) {
-        setError(fileData.message || "Failed to upload Aadhaar card")
-        setLoading(false)
+      if (!fileRes.ok) {
+        const message = Array.isArray(fileData.message)
+          ? fileData.message.join(", ")
+          : fileData.message
+        setError(
+          `Address saved, but the Aadhaar upload failed: ${message || "unknown error"}. Click save to retry the upload.`
+        )
         return
       }
-       console.log("Success:", fileData)
-      router.push("/home")
 
-    }catch(err){
-        console.error(err)
+      router.push("/home")
+    } catch (error) {
+      console.error(error)
       setError("Something went wrong. Please try again.")
-    }finally{
-        setLoading(false)
+    } finally {
+      setLoading(false)
     }
-    }
+  }
+
 
     return(
         <div className={style.container}>
