@@ -197,7 +197,7 @@ try{
           return
         }
 
-        localStorage.setItem("AccessToken",data.Access_TOken)
+        localStorage.setItem("accessToken",data.Access_TOken)
         localStorage.setItem("role",role)
         if(role==="operater"){
             route.push("/operater-homepage")
