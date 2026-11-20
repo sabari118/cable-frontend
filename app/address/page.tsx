@@ -11,12 +11,13 @@ export default function AddressPage(){
     const[state,setState]=useState("")
     const[street,setStreet]=useState("")
     const[aadhaarFile,setAadhaarFile]=useState<File | null>(null)
-
+    const[addressId,setAddressId]=useState<string | null>(null)
     const[loading,setLoading]=useState(false)
     const[err,setError]=useState("")
 
     async function handleSubmit(e:React.SyntheticEvent<HTMLFormElement>){
     e.preventDefault()
+    if(loading) return
     setError("")
 
     if(!aadhaarFile){
@@ -33,6 +34,8 @@ export default function AddressPage(){
     setLoading(true)
 
     try{
+        let address_id = addressId
+        if(!address_id){
         const addressRes=await fetch(`${API_URL}/address`,{
             method:"POST",
             headers:{
@@ -57,8 +60,11 @@ export default function AddressPage(){
             return 
         }
 
-        const address_id=addressData.address_id
+         address_id=addressData.address_id
+          setAddressId(address_id)
 
+
+    }
         const formData=new FormData()
         formData.append("file", aadhaarFile)
 
